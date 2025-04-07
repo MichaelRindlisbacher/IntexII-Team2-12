@@ -6,6 +6,9 @@ using RootkitAuth.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -66,14 +69,37 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowFrontend");
 
+
 app.Use(async (context, next) =>
 {
-    context.Response.Headers.Append("Access-Control-Allow-Origin", "https://witty-desert-035a21e1e.6.azurestaticapps.net");
-    context.Response.Headers.Append("Access-Control-Allow-Credentials", "true");
+    Console.WriteLine($"➡️  Request: {context.Request.Method} {context.Request.Path}");
+
+    context.Response.OnStarting(() =>
+    {
+        Console.WriteLine($"⬅️  Response status: {context.Response.StatusCode}");
+        foreach (var header in context.Response.Headers)
+        {
+            Console.WriteLine($"📦  Header: {header.Key}: {header.Value}");
+        }
+        return Task.CompletedTask;
+    });
+
     await next.Invoke();
 });
 
 app.UseHttpsRedirection();
+
+app.UseStatusCodePages(async context =>
+{
+    var response = context.HttpContext.Response;
+
+    // If it's a redirect (login or access denied), make it return a proper status code instead
+    if (response.StatusCode == 401 || response.StatusCode == 403)
+    {
+        response.ContentType = "application/json";
+        await response.WriteAsync("{\"error\": \"Unauthorized\"}");
+    }
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
