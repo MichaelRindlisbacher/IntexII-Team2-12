@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
@@ -8,6 +9,7 @@ namespace RootkitAuth.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class CompetitionController : ControllerBase
     {
         private CompetitionDbContext _competitionDbContext;

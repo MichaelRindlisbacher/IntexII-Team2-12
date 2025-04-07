@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -34,9 +36,31 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.row {
+  background-color: white;
+}
+
+.logout {
+  color: #fff;
+  font-size: large;
+  font-weight: bold;
+}
+
+.resultsCount {
+  margin: 1em;
+}
+
+.RKHeader {
+  font-family: 'Boldonse', system-ui;
+  font-weight: 200;
+  font-style: normal;
 }

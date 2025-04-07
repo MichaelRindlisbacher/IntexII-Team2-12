@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/b292c64a-7f7e-4bd4-a154-e21205ed0bc6/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/IntexII-Team2-12",
+  "appService.deploySubpath": "backend\\RootkitAuth.API\\publish"
+}
