@@ -41,9 +41,8 @@ function LoginPage() {
     
     const BASE_URL = 'https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net';
 
-    const loginUrl = rememberme
-      ? `${BASE_URL}/login?useCookies=true`
-      : `${BASE_URL}/login?useSessionCookies=true`;
+    const loginUrl = `${BASE_URL}/login`
+
 
     try {
       const response = await fetch(loginUrl, {
