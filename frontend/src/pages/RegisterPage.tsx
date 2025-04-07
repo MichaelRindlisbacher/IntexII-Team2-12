@@ -37,7 +37,7 @@ if (!email || !password || !confirmPassword) {
     // clear error message
     setError('');
     // post data to the /register api
-    fetch('https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net/auth/register', {
+    fetch('https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net/register', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

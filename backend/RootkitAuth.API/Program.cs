@@ -6,9 +6,6 @@ using RootkitAuth.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -21,12 +18,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CompetitionDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("CompetitionConnection")));
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>  
     options.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection")));
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+builder.Services.AddIdentityApiEndpoints<IdentityUser>()  
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.Configure<IdentityOptions>(options =>
@@ -36,15 +33,6 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<IdentityUser>, CustomUserClaimsPrincipalFactory>();
-
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.Cookie.HttpOnly = true;
-    options.Cookie.SameSite = SameSiteMode.None; // change after adding https for production
-    options.Cookie.Name = ".AspNetCore.Identity.Application";
-    options.LoginPath = "/login";
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-});
 
 
 builder.Services.AddCors(options =>
@@ -58,7 +46,6 @@ builder.Services.AddCors(options =>
                 .AllowAnyHeader();
         });
 });
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -68,56 +55,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.Use(async (context, next) =>
-{
-    Console.WriteLine($"➡️  Request: {context.Request.Method} {context.Request.Path}");
-
-    context.Response.OnStarting(() =>
-    {
-        Console.WriteLine($"⬅️  Response status: {context.Response.StatusCode}");
-        foreach (var header in context.Response.Headers)
-        {
-            Console.WriteLine($"📦  Header: {header.Key}: {header.Value}");
-        }
-        return Task.CompletedTask;
-    });
-
-    await next.Invoke();
-});
-
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
 
-app.UseCors("AllowFrontend");
-
-app.UseStatusCodePages(async context =>
-{
-    var response = context.HttpContext.Response;
-
-    // If it's a redirect (login or access denied), make it return a proper status code instead
-    if (response.StatusCode == 401 || response.StatusCode == 403)
-    {
-        response.ContentType = "application/json";
-        await response.WriteAsync("{\"error\": \"Unauthorized\"}");
-    }
-});
-
-app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-//app.MapIdentityApi<IdentityUser>();
+app.MapIdentityApi<IdentityUser>();
 
 app.MapPost("/logout", async (HttpContext context, SignInManager<IdentityUser> signInManager) =>
 {
     await signInManager.SignOutAsync();
-
+    
     // Ensure authentication cookie is removed
-    context.Response.Cookies.Delete(".AspNetCore.Identity.Application", new CookieOptions
-    {
-        HttpOnly = true,
-        Secure = true,
-        SameSite = SameSiteMode.None
-    });
+    context.Response.Cookies.Delete(".AspNetCore.Identity.Application");
 
     return Results.Ok(new { message = "Logout successful" });
 }).RequireAuthorization();

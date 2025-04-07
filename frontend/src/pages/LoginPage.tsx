@@ -41,7 +41,7 @@ function LoginPage() {
     
     const BASE_URL = 'https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net';
 
-    const loginUrl = `${BASE_URL}/auth/login`
+    const loginUrl = `${BASE_URL}/login`
 
 
     try {
