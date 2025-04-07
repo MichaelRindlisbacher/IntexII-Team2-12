@@ -65,6 +65,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowFrontend");
+
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Append("Access-Control-Allow-Origin", "https://witty-desert-035a21e1e.6.azurestaticapps.net");
+    context.Response.Headers.Append("Access-Control-Allow-Credentials", "true");
+    await next.Invoke();
+});
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
