@@ -49,7 +49,7 @@ function LoginPage() {
         method: 'POST',
         credentials: 'include', // ✅ Ensures cookies are sent & received
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username: email, password }),
       });
 
       // Ensure we only parse JSON if there is content
