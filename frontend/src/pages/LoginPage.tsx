@@ -38,10 +38,12 @@ function LoginPage() {
       setError('Please fill in all fields.');
       return;
     }
+    
+    const BASE_URL = 'https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net';
 
     const loginUrl = rememberme
-      ? 'https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net/login?useCookies=true'
-      : 'https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net/login?useSessionCookies=true';
+      ? `${BASE_URL}/login?useCookies=true`
+      : `${BASE_URL}/login?useSessionCookies=true`;
 
     try {
       const response = await fetch(loginUrl, {
