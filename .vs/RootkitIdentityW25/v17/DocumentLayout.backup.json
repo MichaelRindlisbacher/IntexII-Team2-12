@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\controllers\\competitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\controllers\\competitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\rootkitauth.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\rootkitauth.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\controllers\\competitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\controllers\\competitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\services\\customuserclaimsprincipalfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\services\\customuserclaimsprincipalfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|c:\\users\\mar38\\source\\repos\\rootkitidentityw25\\backend\\rootkitauth.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{525B22B6-6D9C-C420-B01E-AA974CEF6F71}|backend\\RootkitAuth.API\\RootkitAuth.API.csproj|solutionrelative:backend\\rootkitauth.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +38,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "RootkitAuth.API.csproj",
+              "DocumentMoniker": "C:\\Users\\mar38\\Source\\Repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\RootkitAuth.API.csproj",
+              "RelativeDocumentMoniker": "backend\\RootkitAuth.API\\RootkitAuth.API.csproj",
+              "ToolTip": "C:\\Users\\mar38\\Source\\Repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\RootkitAuth.API.csproj",
+              "RelativeToolTip": "backend\\RootkitAuth.API\\RootkitAuth.API.csproj",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-07T21:14:54.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "backend\\RootkitAuth.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "backend\\RootkitAuth.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwAYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T20:25:35.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CompetitionController.cs",
               "DocumentMoniker": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\Controllers\\CompetitionController.cs",
               "RelativeDocumentMoniker": "backend\\RootkitAuth.API\\Controllers\\CompetitionController.cs",
@@ -42,12 +75,11 @@
               "RelativeToolTip": "backend\\RootkitAuth.API\\Controllers\\CompetitionController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T22:13:23.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T22:13:23.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "CustomUserClaimsPrincipalFactory.cs",
               "DocumentMoniker": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\Services\\CustomUserClaimsPrincipalFactory.cs",
               "RelativeDocumentMoniker": "backend\\RootkitAuth.API\\Services\\CustomUserClaimsPrincipalFactory.cs",
@@ -59,19 +91,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\Program.cs",
               "RelativeDocumentMoniker": "backend\\RootkitAuth.API\\Program.cs",
               "ToolTip": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\Program.cs",
               "RelativeToolTip": "backend\\RootkitAuth.API\\Program.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T21:37:25.185Z"
+              "WhenOpened": "2025-04-01T21:37:25.185Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\appsettings.json",
               "RelativeDocumentMoniker": "backend\\RootkitAuth.API\\appsettings.json",
@@ -79,11 +112,12 @@
               "RelativeToolTip": "backend\\RootkitAuth.API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-01T21:36:45.039Z"
+              "WhenOpened": "2025-04-01T21:36:45.039Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\mar38\\source\\repos\\RootkitIdentityW25\\backend\\RootkitAuth.API\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "backend\\RootkitAuth.API\\Data\\ApplicationDbContext.cs",
