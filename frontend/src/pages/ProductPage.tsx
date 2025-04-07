@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import Header from '../components/Header';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/CartItem';
 import { useState } from 'react';
