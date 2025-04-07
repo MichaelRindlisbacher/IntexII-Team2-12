@@ -21,7 +21,7 @@ function CompetitionList({
         .join('&');
 
       const response = await fetch(
-        `https://localhost:5000/Competition/GetRootbeers?pageSize=${pageSize}&pageNum=${pageNum}${selectedContainers.length ? `&${containerParams}` : ''}`,
+        `https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net/Competition/GetRootbeers?pageSize=${pageSize}&pageNum=${pageNum}${selectedContainers.length ? `&${containerParams}` : ''}`,
       {
         credentials: 'include',
       }
