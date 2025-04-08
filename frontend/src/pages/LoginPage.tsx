@@ -1,22 +1,20 @@
-// src/pages/LoginPage.tsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './identity.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import CookieConsent from '../components/CookieConsent';
-import { useCookieConsent } from '../components/CookieConsent';
 
 function LoginPage() {
-  // State variables for email, password, and checkbox
+  // state variables for email and passwords
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [rememberme, setRememberme] = useState<boolean>(false);
+
+  // state variable for error messages
   const [error, setError] = useState<string>('');
   const navigate = useNavigate();
 
-  // Use the shared cookie consent state from context
-  const { cookieConsent } = useCookieConsent();
-
+  // handle change events for input fields, with logging
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, type, checked, value } = e.target;
     if (type === 'checkbox') {
@@ -36,33 +34,37 @@ function LoginPage() {
     navigate('/register');
   };
 
+  // handle submit event for the form, with detailed logging
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(`[Form Submit] Login form submitted.`);
-    setError('');
+    setError(''); // clear any previous errors
 
+    // Validate inputs
     if (!email || !password) {
       console.log(`[Validation Error] Missing email or password.`);
       setError('Please fill in all fields.');
       return;
     }
     
+    // Determine login URL based on rememberme flag
     const loginUrl = rememberme
       ? 'https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net/login?useCookies=true'
       : 'https://intexii-team2-12-b9b2h9ead7cwd9ax.eastus-01.azurewebsites.net/login?useSessionCookies=true';
-      
     console.log(`[Login Request] URL: ${loginUrl}`);
     console.log(`[Login Request] Attempting login with email: ${email}`);
 
     try {
       const response = await fetch(loginUrl, {
         method: 'POST',
-        credentials: 'include',
+        credentials: 'include', // ensures cookies are sent & received
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
       console.log(`[Login Response] HTTP status: ${response.status}`);
+      console.log(`[Login Response] Full response:`, response);
 
+      // Only parse JSON if there is content
       let data = null;
       const contentLength = response.headers.get('content-length');
       console.log(`[Login Response] Content-Length header: ${contentLength}`);
@@ -117,21 +119,20 @@ function LoginPage() {
                 />
                 <label htmlFor="password">Password</label>
               </div>
-              {cookieConsent === 'true' && (
-                <div className="form-check mb-3">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="rememberme"
-                    name="rememberme"
-                    checked={rememberme}
-                    onChange={handleChange}
-                  />
-                  <label className="form-check-label" htmlFor="rememberme">
-                    Remember password
-                  </label>
-                </div>
-              )}
+              <div className="form-check mb-3">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="rememberme"
+                  name="rememberme"
+                  checked={rememberme}
+                  onChange={handleChange}
+                />
+                <label className="form-check-label" htmlFor="rememberme">
+                  Remember password
+                </label>
+              </div>
               <div className="d-grid mb-2">
                 <button
                   className="btn btn-primary btn-login text-uppercase fw-bold"
@@ -170,9 +171,9 @@ function LoginPage() {
           </div>
         </div>
       </div>
-      <CookieConsent />
     </div>
   );
 }
 
 export default LoginPage;
+
