@@ -40,7 +40,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("https://witty-desert-035a21e1e.6.azurestaticapps.net") // Replace with your frontend URL
+            policy.WithOrigins("https://witty-desert-035a21e1e.6.azurestaticapps.net")// Replace with your frontend URL
                 .AllowCredentials() // Required to allow cookies
                 .AllowAnyMethod()
                 .AllowAnyHeader();
@@ -76,15 +76,20 @@ app.MapPost("/logout", async (HttpContext context, SignInManager<IdentityUser> s
 }).RequireAuthorization();
 
 
-app.MapGet("/pingauth", (ClaimsPrincipal user) =>
+app.MapGet("/pingauth", (ClaimsPrincipal user, ILogger<Program> logger) =>
 {
+    logger.LogInformation("User identity is: {Identity}", user.Identity?.Name);
+
     if (!user.Identity?.IsAuthenticated ?? false)
     {
+        Console.WriteLine("User is not authenticated."); 
         return Results.Unauthorized();
     }
 
-    var email = user.FindFirstValue(ClaimTypes.Email) ?? "unknown@example.com"; // Ensure it's never null
-    return Results.Json(new { email = email }); // Return as JSON
+    var email = user.FindFirstValue(ClaimTypes.Email) ?? "unknown@example.com";
+    Console.WriteLine($"User email is: {email}");
+    return Results.Json(new { email = email });
 }).RequireAuthorization();
+
 
 app.Run();
