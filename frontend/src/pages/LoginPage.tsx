@@ -1,8 +1,7 @@
-import { useEffect,useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './identity.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import CookieConsent from '../components/CookieConsent';
 
 function LoginPage() {
   // state variables for email and passwords
@@ -10,25 +9,9 @@ function LoginPage() {
   const [password, setPassword] = useState<string>('');
   const [rememberme, setRememberme] = useState<boolean>(false);
 
-  const [cookieConsentGiven, setCookieConsentGiven] = useState<boolean>(false);
-
   // state variable for error messages
   const [error, setError] = useState<string>('');
   const navigate = useNavigate();
-
-    // ---- NEW: useEffect to check localStorage for cookie consent ----
-    useEffect(() => {
-      const consent = localStorage.getItem('cookieConsent');
-      // Set state to true only if the stored value is exactly 'true'
-      const hasConsent = consent === 'true';
-      setCookieConsentGiven(hasConsent);
-      console.log(`[Cookie Consent Check] Consent status from localStorage: ${consent}, HasConsent: ${hasConsent}`);
-  
-      // If consent wasn't given, ensure rememberme is false
-      if (!hasConsent) {
-          setRememberme(false);
-      }
-    }, []); // Empty dependency array means this runs once on mount
 
   // handle change events for input fields, with logging
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -139,26 +122,15 @@ function LoginPage() {
                 <input
                   className="form-check-input"
                   type="checkbox"
-                  // value="" // Value attribute is not typically needed for boolean checkboxes
+                  value=""
                   id="rememberme"
                   name="rememberme"
-                  // ---- MODIFIED: Check state AND consent ----
-                  checked={rememberme && cookieConsentGiven}
+                  checked={rememberme}
                   onChange={handleChange}
-                  // ---- MODIFIED: Disable if consent not given ----
-                  disabled={!cookieConsentGiven}
-                  // ---- Optional: Add aria-describedby for accessibility ----
-                  aria-describedby="remembermeHelp"
                 />
                 <label className="form-check-label" htmlFor="rememberme">
                   Remember password
                 </label>
-                {/* ---- Optional: Add helper text explaining the restriction ---- */}
-                {!cookieConsentGiven && (
-                    <small id="remembermeHelp" className="form-text text-muted d-block">
-                        (Requires accepting cookies)
-                    </small>
-                )}
               </div>
               <div className="d-grid mb-2">
                 <button
