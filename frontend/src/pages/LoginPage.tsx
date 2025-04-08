@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './identity.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import CookieConsent from '../components/CookieConsent';
 
 function LoginPage() {
   // state variables for email and passwords
@@ -170,6 +171,7 @@ function LoginPage() {
           </div>
         </div>
       </div>
+      <CookieConsent />
     </div>
   );
 }
