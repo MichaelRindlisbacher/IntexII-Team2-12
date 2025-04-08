@@ -120,6 +120,7 @@ function LoginPage() {
                 <label htmlFor="password">Password</label>
               </div>
               <div className="form-check mb-3">
+              {localStorage.getItem('cookieConsent') === 'true' && (
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -129,6 +130,7 @@ function LoginPage() {
                   checked={rememberme}
                   onChange={handleChange}
                 />
+                )}
                 <label className="form-check-label" htmlFor="rememberme">
                   Remember password
                 </label>
